@@ -1,0 +1,14 @@
+{
+	"body": {
+		"version": "1.0",
+		"response": {
+			"outputSpeech": {
+				"type": "PlainText",
+				"text": "RESPONSETEXT"
+			},
+			"shouldEndSession": false,
+			"type": "_DEFAULT_RESPONSE"
+		},
+		"sessionAttributes": {}
+	}
+}

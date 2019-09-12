@@ -1,0 +1,61 @@
+{
+	"version": "1.0",
+	"session": {
+		"new": true,
+		"sessionId": "FAKEDATA",
+		"application": {
+			"applicationId": "FAKEDATA"
+		},
+		"user": {
+			"userId": "FAKEDATA"
+		}
+	},
+	"context": {
+		"System": {
+			"application": {
+				"applicationId": "FAKEDATA"
+			},
+			"user": {
+				"userId": "FAKEDATA"
+			},
+			"device": {
+				"deviceId": "FAKEDATA",
+				"supportedInterfaces": {}
+			},
+			"apiEndpoint": "https://api.amazonalexa.com",
+			"apiAccessToken": "FAKEDATA"
+		},
+		"Viewport": {
+			"experiences": [
+				{
+					"arcMinuteWidth": 246,
+					"arcMinuteHeight": 144,
+					"canRotate": false,
+					"canResize": false
+				}
+			],
+			"shape": "RECTANGLE",
+			"pixelWidth": 1024,
+			"pixelHeight": 600,
+			"dpi": 160,
+			"currentPixelWidth": 1024,
+			"currentPixelHeight": 600,
+			"touch": [
+				"SINGLE"
+			],
+			"video": {
+				"codecs": [
+					"H_264_42",
+					"H_264_41"
+				]
+			}
+		}
+	},
+	"request": {
+		"type": "SessionEndedRequest",
+		"requestId": "FAKEDATA",
+		"timestamp": "2019-09-11T23:53:08Z",
+		"locale": "en-US",
+		"reason": "USER_INITIATED"
+	}
+}

@@ -1,20 +1,30 @@
 from alexa import response
+import json
 import pytest
 
 @pytest.mark.parametrize(
-    'text,result',
+    "input_text, end_session",
     [
-        ('hi','test')
+        ("Test", False),
+        ("Test", True),
+        ("\n\t", False),
+        (1, False),
+        (True, False),
+        (0.5, False)
     ]
 )
-def test_build_text_response(text, result):
+def test_build_text_response(input_text, end_session):
     """
     response.text_response(text) should format the text for Alexa so that Alexa
     will read the text to the user in response to their query
     """
-    res = response.text_response(text)
+    res = response.plaintext_response(input_text, end_session=end_session)
 
-    assert res == result
+    res_json = json.loads(res)
+
+    assert res_json['body']['response']['outputSpeech']['type'] == 'PlainText'
+    assert res_json['body']['response']['outputSpeech']['text'] == str(input_text)
+    assert res_json['body']['response']['shouldEndSession'] == end_session
 
 # Test opening text
 # "INSERT OPENING TEXT HERE"
