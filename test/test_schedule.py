@@ -1,5 +1,6 @@
 from schedule import schedule
 from datetime import datetime
+import arrow
 
 def test_get_next_event():
     """
@@ -13,11 +14,13 @@ def test_get_next_event():
     """
     result = schedule.get_next_event()
 
-    assert result['name'], 'Result has no `name` key'
-    assert result['date'], 'Result has not `date` key'
+    if result:
+        assert result['name'], 'Result has no `name` key'
+        assert result['date'], 'Result has not `date` key'
 
-    assert isinstance(result['name'], str), 'name is not a string'
-    assert isinstance(result['date'], datetime.date), 'date is not a date'
+        assert isinstance(result['name'], str), 'name is not a string'
+        assert isinstance(result['date'], arrow.Arrow), 'date is not a date'
+    
 
 def test_get_next_meeting():
     """
@@ -31,11 +34,12 @@ def test_get_next_meeting():
     """
     result = schedule.get_next_meeting()
 
-    assert result['name'], 'Result has no `name` key'
-    assert result['date'], 'Result has not `date` key'
+    if result:
+        assert result['name'], 'Result has no `name` key'
+        assert result['date'], 'Result has not `date` key'
 
-    assert isinstance(result['name'], str), 'name is not a string'
-    assert isinstance(result['date'], datetime.date), 'date is not a date'
+        assert isinstance(result['name'], str), 'name is not a string'
+        assert isinstance(result['date'], arrow.Arrow), 'date is not a date'
 
 def test_get_next_workshop():
     """
@@ -49,11 +53,12 @@ def test_get_next_workshop():
     """
     result = schedule.get_next_workshop()
 
-    assert result['name'], 'Result has no `name` key'
-    assert result['date'], 'Result has not `date` key'
+    if result:
+        assert result['name'], 'Result has no `name` key'
+        assert result['date'], 'Result has not `date` key'
 
-    assert isinstance(result['name'], str), 'name is not a string'
-    assert isinstance(result['date'], datetime.date), 'date is not a date'
+        assert isinstance(result['name'], str), 'name is not a string'
+        assert isinstance(result['date'], arrow.Arrow), 'date is not a date'
 
 def test_get_next_ops_meeting():
     """
@@ -67,11 +72,12 @@ def test_get_next_ops_meeting():
     """
     result = schedule.get_next_workshop()
 
-    assert result['name'], 'Result has no `name` key'
-    assert result['date'], 'Result has not `date` key'
+    if result:
+        assert result['name'], 'Result has no `name` key'
+        assert result['date'], 'Result has not `date` key'
 
-    assert isinstance(result['name'], str), 'name is not a string'
-    assert isinstance(result['date'], datetime.date), 'date is not a date'
+        assert isinstance(result['name'], str), 'name is not a string'
+        assert isinstance(result['date'], arrow.Arrow), 'date is not a date'
 
 def test_get_next_competition():
     """
@@ -85,8 +91,9 @@ def test_get_next_competition():
     """
     result = schedule.get_next_competition()
 
-    assert result['name'], 'Result has no `name` key'
-    assert result['date'], 'Result has not `date` key'
+    if result:
+        assert result['name'], 'Result has no `name` key'
+        assert result['date'], 'Result has not `date` key'
 
-    assert isinstance(result['name'], str), 'name is not a string'
-    assert isinstance(result['date'], datetime.date), 'date is not a date'
+        assert isinstance(result['name'], str), 'name is not a string'
+        assert isinstance(result['date'], arrow.Arrow), 'date is not a date'
